@@ -4,28 +4,59 @@
         height: 75vmin;
         width: 75vmin;
         flex-grow: 0;
-        grid-template-columns: 4vmin 1fr repeat(3,12vmin) 4vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,8vmin) 10vmin repeat(5, 1fr) repeat(3,1.5vmin) 4vmin 1vmin;    
+        grid-template-columns: 4% 1fr repeat(3,12%) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,8%) 10% repeat(5, 1fr) repeat(3,1.5%) 4% 1%;    
     }
     5% {
         height: 75vmin;
         width: 75vmin;
         flex-grow: 0;
-        grid-template-columns: 4vmin 1fr repeat(3,12vmin) 4vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,8vmin) 10vmin repeat(5, 1fr) repeat(3,1.5vmin) 4vmin 1vmin;    
+        grid-template-columns: 4% 1fr repeat(3,12%) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,8%) 10% repeat(5, 1fr) repeat(3,1.5%) 4% 1%;    
     }
-    50% {
+    75% {
         width: 100vw;
         height: 100vh;
-        grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 6.5vmin repeat(5, 1fr) repeat(3,5vmin) 20vmin 1vmin;
+        grid-template-columns: 4% 1fr repeat(3,5%) 2% 0%;
+        grid-template-rows: 0% 4% repeat(3,4%) 6.5% repeat(5, 1fr) repeat(3,5%) 20% 1%;
     
     }
     100% {
         width: 100vw;
         height: 100vh;
-        grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 32vmin 1vmin;
+        grid-template-columns: 4% 1fr repeat(3,5%) 2% 0%;
+        grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 22% 1%;
+    
+    }
+}
+
+@keyframes animate-large-canvas {
+    0% {
+        height: 75vmin;
+        width: 75vmin;
+        flex-grow: 0;
+        grid-template-columns: 4% minmax(300px, 920px) repeat(3,minmax(12%, 1fr)) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,8%) 10% repeat(5, 1fr) repeat(3,1.5%) 4% 1%;    
+    }
+    5% {
+        height: 75vmin;
+        width: 75vmin;
+        flex-grow: 0;
+        grid-template-columns: 4% minmax(300px, 920px) repeat(3,minmax(12%, 1fr)) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,8%) 10% repeat(5, 1fr) repeat(3,1.5%) 4% 1%;    
+    }
+    50% {
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 4% minmax(450px, 920px) repeat(3,minmax(11%, 1fr)) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,4%) 6.5% repeat(5, 1fr) repeat(3,5%) 20% 1%;
+    
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 4% minmax(600px, 920px) repeat(3,minmax(10%, 1fr)) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 32% 1%;
     
     }
 }
@@ -75,11 +106,9 @@ html {
 body {
     font-family: 'Abel', sans-serif;
     margin: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    display: grid;
+    place-content: center;
 }
 
 ul {
@@ -100,7 +129,7 @@ h1, p, a {
     width: 100%;
     font-size: 1.2em;
 
-    animation: fade-in 8.2s ease-in;
+    animation: fade-in 7.2s ease-in;
 }
 
 .wrapper {
@@ -109,7 +138,7 @@ h1, p, a {
     height: inherit;
     width: inherit;
 
-    animation: wrapper-animation 8.1s ease-in;
+    animation: wrapper-animation 7.1s ease-in;
 }
 
 .mailto {
@@ -121,11 +150,11 @@ h1, p, a {
     width: 100vw;
     background-color: var(--black);
     display: grid;
-    grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-    grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 32vmin 1vmin;
+    grid-template-columns: 4% 1fr repeat(3,5%) 2% 0%;
+    grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 22% 1%;
     grid-gap: 0.75vmin;
 
-    animation: animate-canvas 8s;
+    animation: animate-canvas 7s;
 }
 
 .canvas > :nth-child(1) {
@@ -242,3 +271,12 @@ h1, p, a {
     grid-column: 2 / 8;
     grid-row: 16 / 17;
 }
+
+@media screen and (min-width: 970px) {
+    .canvas {
+        grid-template-columns: 4% minmax(600px, 920px) repeat(3,auto) 4% 0%;
+        grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 32% 1%;
+    
+        animation: animate-large-canvas 8s;
+    }
+  }
