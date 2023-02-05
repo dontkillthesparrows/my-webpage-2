@@ -7,6 +7,13 @@
         grid-template-columns: 4vmin 1fr repeat(3,12vmin) 4vmin 0vmin;
         grid-template-rows: 0vmin 4vmin repeat(3,8vmin) 10vmin repeat(5, 1fr) repeat(3,1.5vmin) 4vmin 1vmin;    
     }
+    5% {
+        height: 75vmin;
+        width: 75vmin;
+        flex-grow: 0;
+        grid-template-columns: 4vmin 1fr repeat(3,12vmin) 4vmin 0vmin;
+        grid-template-rows: 0vmin 4vmin repeat(3,8vmin) 10vmin repeat(5, 1fr) repeat(3,1.5vmin) 4vmin 1vmin;    
+    }
     50% {
         width: 100vw;
         height: 100vh;
@@ -52,12 +59,22 @@
         opacity: 1;
     }
 }
+
+body > * {
+    --color1: #614e22;
+    --color2: #a966a3;
+    --color3: #b9a6c0;
+    --color4: #dab998;
+    --black: #161616;
+    --white: #fff;
+}
 html {
     height: 100%;
 }
 
 /*body and canvas desktop complete animation*/
 body {
+    font-family: 'Abel', sans-serif;
     margin: 0;
     min-height: 100%;
     display: flex;
@@ -67,7 +84,7 @@ body {
 }
 
 p {
-    color: black;
+    color: var(--black);
     visibility: visible;
     height: 100%;
     width: 100%;
@@ -77,7 +94,6 @@ p {
 
 .textwrapper {
     padding: 1em;
-    color: black;
     visibility: visible;
     height: inherit;
     width: inherit;
@@ -88,7 +104,7 @@ p {
 .canvas {
     height: 100vh;
     width: 100vw;
-    background-color: black;
+    background-color: var(--black);
     display: grid;
     grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
     grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 30vmin 1vmin;
@@ -96,17 +112,6 @@ p {
 
     animation: animate-canvas 8s
 }
-
-.canvas > * {
-    --color1: #614e22;
-    --color2: #a966a3;
-    --color3: #b9a6c0;
-    --color4: #dab998;
-}
-
-
-
-
 
 .canvas > :nth-child(1) {
     background-color: var(--color4);
@@ -122,13 +127,13 @@ p {
 }
 
 .canvas > :nth-child(3) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 3 / 4;
     grid-row: 2 / 4;
 }
 
 .canvas > :nth-child(4) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 4 / 7;
     grid-row: 1 / 3;
 }
@@ -140,7 +145,7 @@ p {
 }
 
 .canvas > :nth-child(6) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 1 / 2;
     grid-row: 4 / 15;
 }
@@ -152,13 +157,13 @@ p {
 }
 
 .canvas > :nth-child(8) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 4 / 6;
     grid-row: 6 / 7;
 }
 
 .canvas > :nth-child(9) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 2 / 3;
     grid-row: 7 / 8;
 }
@@ -176,7 +181,7 @@ p {
 }
 
 .canvas > :nth-child(12) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 2 / 3;
     grid-row: 8 / 15;
 }
@@ -188,19 +193,19 @@ p {
 }
 
 .canvas > :nth-child(14) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 5 / 6;
     grid-row: 11 / 15;
 }
 
 .canvas > :nth-child(15) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 6 / 7;
     grid-row: 11 / 15;
 }
 
 .canvas > :nth-child(16) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 1 / 2;
     grid-row: 15 / 17;
 }
@@ -212,13 +217,13 @@ p {
 }
 
 .canvas > :nth-child(18) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 5 / 7;
     grid-row: 15 / 16;
 }
 
 .canvas > :nth-child(19) {
-    background-color: white;
+    background-color: var(--white);
     grid-column: 2 / 8;
     grid-row: 16 / 17;
 }
