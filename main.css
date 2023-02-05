@@ -152,7 +152,7 @@ h1, p, a {
     display: grid;
     grid-template-columns: 4% 1fr repeat(3,5%) 2% 0%;
     grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 28% 3%;
-    grid-gap: 0.75vmin;
+    grid-gap: 1vmin;
 
     animation: animate-canvas 7s;
 }
@@ -274,7 +274,7 @@ h1, p, a {
 
 @media screen and (min-width: 970px) {
     .canvas {
-        grid-template-columns: 4% minmax(600px, 920px) repeat(3,auto) 4% 0%;
+        grid-template-columns: 4% minmax(600px, 920px) repeat(3,minmax(10%, 1fr)) 4% 0%;
         grid-template-rows: 0% 4% repeat(3,4%) 4% repeat(5, 1fr) repeat(3,8%) 32% 1%;
     
         animation: animate-large-canvas 8s;
