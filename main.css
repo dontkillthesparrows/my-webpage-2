@@ -125,7 +125,7 @@ h1, p, a {
     grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 32vmin 1vmin;
     grid-gap: 0.75vmin;
 
-    animation: animate-canvas 8s
+    animation: animate-canvas 8s;
 }
 
 .canvas > :nth-child(1) {
@@ -138,7 +138,7 @@ h1, p, a {
 .canvas > :nth-child(2) {
     background-color: var(--color3);
     grid-column: 2 / 3;
-    grid-row: 2 / 4
+    grid-row: 2 / 4;
 }
 
 .canvas > :nth-child(3) {
