@@ -85,7 +85,6 @@ body {
 ul {
     list-style-type: none;
     padding-inline-start: 0;
-    /* margin-block-start: 0.6em; */
     display: flex;
     flex-direction: row;
 }
@@ -111,6 +110,10 @@ h1, p, a {
     width: inherit;
 
     animation: wrapper-animation 8.1s ease-in;
+}
+
+.mailto {
+    font-size: 1em;
 }
 
 .canvas {
