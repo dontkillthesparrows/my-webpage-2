@@ -18,19 +18,19 @@
         width: 100vw;
         height: 100vh;
         grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 6.5vmin repeat(5, 1fr) repeat(3,5vmin) 18vmin 1vmin;
+        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 6.5vmin repeat(5, 1fr) repeat(3,5vmin) 20vmin 1vmin;
     
     }
     100% {
         width: 100vw;
         height: 100vh;
         grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 30vmin 1vmin;
+        grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 32vmin 1vmin;
     
     }
 }
 
-@keyframes text-wrapper-animation {
+@keyframes wrapper-animation {
     from {
         height: 0;
         width: 0;
@@ -39,12 +39,12 @@
     75% {
         height: inherit;
         width: inherit;
-        padding: 1em;
+        padding: 0.5em 1em;
     }
     to {
         height: inherit;
         width: inherit;
-        padding: 1em;
+        padding: 0.5em 1em;
     }
 }
 
@@ -72,7 +72,6 @@ html {
     height: 100%;
 }
 
-/*body and canvas desktop complete animation*/
 body {
     font-family: 'Abel', sans-serif;
     margin: 0;
@@ -83,23 +82,35 @@ body {
     align-items: center;
 }
 
-.textwrapper {
-    padding: 1em;
-    visibility: visible;
-    height: inherit;
-    width: inherit;
-
-    animation: text-wrapper-animation 8.5s ease-in;
+ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    /* margin-block-start: 0.6em; */
+    display: flex;
+    flex-direction: row;
 }
 
-h1, p {
+li:not(:first-child) {
+    margin-inline-start: 1.2em;
+}
+
+h1, p, a {
     color: var(--black);
     visibility: visible;
     height: 100%;
     width: 100%;
     font-size: 1.2em;
 
-    animation: fade-in 9s ease-in;
+    animation: fade-in 8.2s ease-in;
+}
+
+.wrapper {
+    padding: 0.5em 1em;
+    visibility: visible;
+    height: inherit;
+    width: inherit;
+
+    animation: wrapper-animation 8.1s ease-in;
 }
 
 .canvas {
@@ -108,7 +119,7 @@ h1, p {
     background-color: var(--black);
     display: grid;
     grid-template-columns: 4vmin 1fr repeat(3,5vmin) 2vmin 0vmin;
-    grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 30vmin 1vmin;
+    grid-template-rows: 0vmin 4vmin repeat(3,4vmin) 4vmin repeat(5, 1fr) repeat(3,8vmin) 32vmin 1vmin;
     grid-gap: 0.75vmin;
 
     animation: animate-canvas 8s
