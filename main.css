@@ -83,15 +83,6 @@ body {
     align-items: center;
 }
 
-p {
-    color: var(--black);
-    visibility: visible;
-    height: 100%;
-    width: 100%;
-
-    animation: fade-in 9s ease-in;
-}
-
 .textwrapper {
     padding: 1em;
     visibility: visible;
@@ -99,6 +90,16 @@ p {
     width: inherit;
 
     animation: text-wrapper-animation 8.5s ease-in;
+}
+
+h1, p {
+    color: var(--black);
+    visibility: visible;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2em;
+
+    animation: fade-in 9s ease-in;
 }
 
 .canvas {
